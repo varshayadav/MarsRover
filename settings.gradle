@@ -1,0 +1,4 @@
+rootProject.name = 'MarsRover'
+include 'test'
+include 'src'
+
