@@ -1,3 +1,7 @@
+package app;
+
+import App.Plateu;
+import position.Position;
 import org.junit.Assert;
 import org.junit.Test;
 

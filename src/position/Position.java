@@ -1,4 +1,4 @@
-import java.util.Comparator;
+package position;
 
 public class Position implements Comparable {
     private final int x;
@@ -24,15 +24,11 @@ public class Position implements Comparable {
 
 
     @Override
-    public boolean equals(Object o) {
-        return this.compareTo(o) == 0;
-    }
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
 
-    @Override
-    public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        return result;
+        return this.compareTo(other) == 0;
     }
 
     @Override

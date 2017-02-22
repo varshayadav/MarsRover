@@ -1,3 +1,8 @@
+package location;
+
+import direction.Direction;
+import position.Position;
+
 public class Location {
 
     private final Direction direction;
@@ -32,13 +37,6 @@ public class Location {
         Location otherLocation = (Location) other;
 
         return direction.equals(otherLocation.direction) && position.equals(otherLocation.position);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = direction != null ? direction.hashCode() : 0;
-        result = 31 * result + (position != null ? position.hashCode() : 0);
-        return result;
     }
 
     public Position getPosition() {

@@ -1,3 +1,7 @@
+package App;
+
+import position.Position;
+
 public class Plateu {
 
     private final Position bottomLeftPosition;

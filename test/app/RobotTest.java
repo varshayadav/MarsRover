@@ -1,3 +1,12 @@
+package app;
+
+import App.Plateu;
+import App.Robot;
+import direction.Direction;
+import direction.EastDirection;
+import direction.NorthDirection;
+import location.Location;
+import position.Position;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -84,7 +93,7 @@ public class RobotTest {
         Position top_right_position = new Position(5, 5);
         Plateu plateu = new Plateu(bottom_left_position, top_right_position);
         Position position = new Position(1, 2);
-        Direction direction = new North();
+        Direction direction = new NorthDirection();
         Location location = new Location(position, direction);
         Robot robot = new Robot(plateu, location);
 
@@ -98,7 +107,7 @@ public class RobotTest {
         robot.move();
         robot.move();
 
-        Location expectedLocation = new Location(new Position(1, 3), new North());
+        Location expectedLocation = new Location(new Position(1, 3), new NorthDirection());
         Assert.assertEquals(expectedLocation, robot.getLocation());
     }
 
@@ -112,7 +121,7 @@ public class RobotTest {
         Position top_right_position = new Position(5, 5);
         Plateu plateu = new Plateu(bottom_left_position, top_right_position);
         Position position = new Position(3, 3);
-        Direction direction = new East();
+        Direction direction = new EastDirection();
         Location location = new Location(position, direction);
         Robot robot = new Robot(plateu, location);
 
@@ -127,7 +136,7 @@ public class RobotTest {
         robot.turn_right();
         robot.move();
 
-        Location expectedLocation = new Location(new Position(5, 1), new East());
+        Location expectedLocation = new Location(new Position(5, 1), new EastDirection());
         Assert.assertEquals(expectedLocation, robot.getLocation());
     }
 }

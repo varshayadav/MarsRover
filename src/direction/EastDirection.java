@@ -1,12 +1,16 @@
-public class East implements Direction {
+package direction;
+
+import position.Position;
+
+public class EastDirection implements Direction {
     @Override
     public Direction left() {
-        return new North();
+        return new NorthDirection();
     }
 
     @Override
     public Direction right() {
-        return new South();
+        return new SouthDirection();
     }
 
     @Override
@@ -18,14 +22,13 @@ public class East implements Direction {
     public String toString() {
         return "E";
     }
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
 
     @Override
     public boolean equals(Object obj) {
-        Direction other = (Direction)obj;
-        return this.getClass() == other.getClass();
+        if(obj == this)
+            return true;
+        if(obj == null)
+            return false;
+        return obj.getClass() == this.getClass();
     }
 }

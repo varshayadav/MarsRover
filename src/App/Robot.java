@@ -1,3 +1,8 @@
+package App;
+
+import location.InvalidLocationException;
+import location.Location;
+
 public class Robot {
     private final Plateu plateu;
     private Location location;

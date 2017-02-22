@@ -1,12 +1,15 @@
-public class South implements Direction {
+package direction;
+import position.Position;
+
+public class SouthDirection implements Direction {
     @Override
     public Direction left() {
-        return new East();
+        return new EastDirection();
     }
 
     @Override
     public Direction right() {
-        return new West();
+        return new WestDirection();
     }
 
     @Override
@@ -20,13 +23,11 @@ public class South implements Direction {
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
     public boolean equals(Object obj) {
-        Direction other = (Direction)obj;
-        return this.getClass() == other.getClass();
+        if(obj == this)
+            return true;
+        if(obj == null)
+            return false;
+        return obj.getClass() == this.getClass();
     }
 }

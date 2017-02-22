@@ -1,3 +1,10 @@
+package location;
+
+import direction.Direction;
+import direction.EastDirection;
+import direction.NorthDirection;
+import direction.WestDirection;
+import position.Position;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -9,8 +16,8 @@ public class LocationTest {
 
     @Test
     public void left() throws Exception {
-        Direction north = Mockito.mock(North.class);
-        Direction east = Mockito.mock(East.class);
+        Direction north = Mockito.mock(NorthDirection.class);
+        Direction east = Mockito.mock(EastDirection.class);
         Position position = Mockito.mock(Position.class);
         Location location = new Location(position, north);
         Location changed_location = new Location(position, east);
@@ -24,8 +31,8 @@ public class LocationTest {
 
     @Test
     public void right() throws Exception {
-        Direction north = Mockito.mock(North.class);
-        Direction west = Mockito.mock(West.class);
+        Direction north = Mockito.mock(NorthDirection.class);
+        Direction west = Mockito.mock(WestDirection.class);
         Position position = Mockito.mock(Position.class);
         Location location = new Location(position, north);
         Location changed_location = new Location(position, west);
@@ -39,7 +46,7 @@ public class LocationTest {
 
     @Test
     public void move() throws Exception {
-        Direction north = Mockito.mock(North.class);
+        Direction north = Mockito.mock(NorthDirection.class);
         Position position = Mockito.mock(Position.class);
         Position changed_position = Mockito.mock(Position.class);
 
